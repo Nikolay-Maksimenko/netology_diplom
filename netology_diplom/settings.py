@@ -45,13 +45,11 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'django_rest_passwordreset',
-
+    'drf_spectacular',
 
     'users',
     'shops',
     'orders',
-
-
 ]
 
 MIDDLEWARE = [
@@ -144,6 +142,7 @@ REST_FRAMEWORK = {
         'user': '100/day',
         'register': '100/day',
     },
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 
 }
 
@@ -192,3 +191,9 @@ CELERY_ACCEPT_CONTENT = ['application/json']
 CELERY_TASK_SERIALIZER = 'json'
 CELERY_RESULT_SERIALIZER = 'json'
 
+SPECTACULAR_SETTINGS = {
+    'TITLE': 'Marketplace API',
+    'DESCRIPTION': 'Product ordering service',
+    'VERSION': '1.0.0',
+    'SERVE_INCLUDE_SCHEMA': False,
+}

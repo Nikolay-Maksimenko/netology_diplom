@@ -259,4 +259,3 @@ class UsersAPITests(APITestCase):
 
         assert response.status_code == 400
         assert response.data['Status'] is False
-
